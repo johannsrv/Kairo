@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Gazebo ROS2 Control -->
+    <gazebo>
+        <plugin
+            name="gazebo_ros2_control"
+            filename="libgazebo_ros2_control.so">
+        </plugin>
+    </gazebo>
+
+    <!-- WHEEL 1 -->
+    <gazebo reference="right_wheel_1_link">
+
+        <!-- Fricción mecanum -->
+        <mu1>0.05</mu1>
+        <mu2>1.0</mu2>
+
+        <!-- Física -->
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+
+        <!-- Material -->
+        <material>Gazebo/Black</material>
+
+    </gazebo>
+
+    <!-- WHEEL 2 -->
+
+    <gazebo reference="right_wheel_2_link">
+
+        <mu1>0.05</mu1>
+        <mu2>1.0</mu2>
+
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+
+        <material>Gazebo/Black</material>
+
+    </gazebo>
+
+    <!-- WHEEL 3 -->
+
+    <gazebo reference="left_wheel_1_link">
+
+        <mu1>0.05</mu1>
+        <mu2>1.0</mu2>
+
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+
+        <material>Gazebo/Black</material>
+
+    </gazebo>
+
+    <!-- WHEEL 4 -->
+
+    <gazebo reference="left_wheel_2_link">
+
+        <mu1>0.05</mu1>
+        <mu2>1.0</mu2>
+
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+
+        <material>Gazebo/Black</material>
+
+    </gazebo>
+
+</robot>
