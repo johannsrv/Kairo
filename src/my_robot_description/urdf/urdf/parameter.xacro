@@ -1,0 +1,10 @@
+<? xml version="1.0" ?>
+
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="name_color_base" value="blue"/>
+    <xacro:property name="rgba_base" value="0 0 1 1"/>
+    <xacro:property name="name_color_engine" value="red"/>
+    <xacro:property name="rgba_engine" value="1 0 0 1"/>
+    <xacro:property name="name_color_wheel" value="yellow"/>
+    <xacro:property name="rgba_wheel" value="1 1 0 1"/>
+</robot>
