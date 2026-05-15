@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro
+    name="create_link"
+    params= "name name_link name_folder name_color rgba xyz rpy"
+    >
+        <link name="${name_link}">
+
+            <visual>
+                <origin xyz="${xyz}" rpy="${rpy}"/>
+                <geometry>
+                    <mesh filename="../stl/${name_folder}/${name}.stl"
+                scale="1 1 1"/>
+                </geometry>
+
+                <material name="${name_color}">
+                    <color rgba="${rgba}"/>
+                </material>
+            </visual>
+
+            <collision>
+                <origin xyz="${xyz}" rpy="${rpy}"/>
+                <geometry>
+                    <mesh filename="../stl/${name_folder}/${name}.stl"
+                scale="1 1 1"/>
+                </geometry>
+            </collision>
+
+            <!-- <inertial>
+                <mass value="${inertial_mass}"/>
+                <origin xyz="${xyz}" rpy="${rpy}"/>
+                <inertia
+                    ixx="${inertial_ixx}" ixy="0.0" ixz="0.0"
+                    iyy="${inertial_iyy}" iyz="0.0"
+                    izz="${inertial_izz}"/>
+            </inertial> -->
+
+        </link>
+    </xacro:macro>
+
+    <xacro:macro
+        name="create_link_wheel"
+        params="name name_link name_folder name_color rgba"
+        >
+
+            <link name="${name_link}">
+
+                <!-- VISUAL -->
+                <visual>
+
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+
+                    <geometry>
+                        <mesh filename="../stl/${name_folder}/${name}.stl"
+                            scale="1 1 1"/>
+                    </geometry>
+
+                    <material name="${name_color}">
+                        <color rgba="${rgba}"/>
+                    </material>
+
+                </visual>
+
+                <!-- COLLISION -->
+                <collision>
+
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+
+                    <geometry>
+                        <cylinder length="0.5" radius="0.1" scale="1 1 1"/>
+                    </geometry>
+
+                </collision>
+
+                <!-- INERTIA -->
+                <inertial>
+
+                    <mass value="0.5"/>
+
+                    <origin xyz="0 0 0" rpy="0 0 0"/>
+
+                    <inertia
+                        ixx="0.001"
+                        ixy="0.0"
+                        ixz="0.0"
+                        iyy="0.001"
+                        iyz="0.0"
+                        izz="0.001"/>
+
+                </inertial>
+
+    </link>
+
+</xacro:macro>
+
+    <xacro:macro
+        name="create_joint_fixed"
+        params="name parent child xyz rpy"
+    >
+        <joint name="${name}" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${child}"/>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro
+        name="create_joint_continuous"
+        params="name parent child xyz rpy axis limit_lower limit_upper">
+        <joint name="${name}" type="continuous">
+            <parent link="${parent}"/>
+            <child link="${child}"/>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <axis xyz="${axis}"/>
+            <limit effort="30" velocity="20"/>
+        </joint>
+    </xacro:macro>
+
+</robot>
