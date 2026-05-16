@@ -10,7 +10,7 @@
                 <origin xyz="${xyz}" rpy="${rpy}"/>
                 <geometry>
                     <mesh filename="../stl/${name_folder}/${name}.stl"
-                scale="1 1 1"/>
+                scale="0.001 0.001 0.001"/>
                 </geometry>
 
                 <material name="${name_color}">
@@ -22,7 +22,7 @@
                 <origin xyz="${xyz}" rpy="${rpy}"/>
                 <geometry>
                     <mesh filename="../stl/${name_folder}/${name}.stl"
-                scale="1 1 1"/>
+                        scale="0.001 0.001 0.001"/>
                 </geometry>
             </collision>
 
@@ -40,7 +40,7 @@
 
     <xacro:macro
         name="create_link_wheel"
-        params="name name_link name_folder name_color rgba"
+        params="name name_link name_folder name_color rgba xyz_collition"
         >
 
             <link name="${name_link}">
@@ -52,7 +52,7 @@
 
                     <geometry>
                         <mesh filename="../stl/${name_folder}/${name}.stl"
-                            scale="1 1 1"/>
+                            scale="0.001 0.001 0.001"/>
                     </geometry>
 
                     <material name="${name_color}">
@@ -64,10 +64,10 @@
                 <!-- COLLISION -->
                 <collision>
 
-                    <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <origin xyz="${xyz_collition}" rpy="1.5708 0 0"/>
 
                     <geometry>
-                        <cylinder length="0.5" radius="0.1" scale="1 1 1"/>
+                        <cylinder length="0.045674" radius="0.028885"/>
                     </geometry>
 
                 </collision>
@@ -89,9 +89,8 @@
 
                 </inertial>
 
-    </link>
-
-</xacro:macro>
+        </link>
+    </xacro:macro>
 
     <xacro:macro
         name="create_joint_fixed"
