@@ -24,7 +24,7 @@
         name_link="engine_1_link"
         name_color="${name_color_engine}"
         rgba="${rgba_engine}"
-        xyz="240 -91 23"
+        xyz="0.240 -0.091 0.023"
         rpy="0 0 3.14159"
         name_folder="electronics"
     />
@@ -34,7 +34,7 @@
         name_link="engine_2_link"
         name_color="${name_color_engine}"
         rgba="${rgba_engine}"
-        xyz="-240 -91 23"
+        xyz="-0.240 -0.091 0.023"
         rpy="0 0 3.14159"
         name_folder="electronics"
     />
@@ -44,7 +44,7 @@
         name_link="engine_3_link"
         name_color="${name_color_engine}"
         rgba="${rgba_engine}"
-        xyz="240 91 23"
+        xyz="0.240 0.091 0.023"
         rpy="0 0 0"
         name_folder="electronics"
     />
@@ -54,7 +54,7 @@
         name_link="engine_4_link"
         name_color="${name_color_engine}"
         rgba="${rgba_engine}"
-        xyz="-240 91 23"
+        xyz="-0.240 0.091 0.023"
         rpy="0 0 0"
         name_folder="electronics"
     />
@@ -67,6 +67,7 @@
         rgba="${rgba_wheel}"
         rpy="0 0 0"
         name_folder="robot_body"
+        xyz_collition="0 0.065 0"
     />
     <xacro:create_link_wheel
         name="right_wheel"
@@ -75,6 +76,7 @@
         rgba="${rgba_wheel}"
         rpy="0 0 3.14159"
         name_folder="robot_body"
+        xyz_collition="0 0.07 0"
     />
 
     <xacro:create_link_wheel
@@ -84,6 +86,7 @@
         rgba="${rgba_wheel}"
         rpy="0 0 0"
         name_folder="robot_body"
+        xyz_collition="0 0.05 0"
     />
     <xacro:create_link_wheel
         name="left_wheel"
@@ -92,6 +95,7 @@
         rgba="${rgba_wheel}"
         rpy="0 0 3.14159"
         name_folder="robot_body"
+        xyz_collition="0 0.05 0"
     />
 
 
@@ -135,7 +139,7 @@
         name="base_link_to_right_wheel_1"
         parent="engine_2_link"
         child="right_wheel_1_link"
-        xyz="-240 -263 23"
+        xyz="-0.240 -0.263 0.023"
         rpy="0 0 0"
         axis="0 1 0"
     />
@@ -144,8 +148,8 @@
         name="base_link_to_right_wheel_2"
         parent="engine_3_link"
         child="right_wheel_2_link"
-        xyz="240 263 23"
-        rpy="0 0 0"
+        xyz="0.240 0.263 0.023"
+        rpy="0 0 3.14159"
         axis="0 1 0"
     />
 
@@ -153,7 +157,7 @@
         name="base_link_to_left_wheel_3"
         parent="engine_1_link"
         child="left_wheel_1_link"
-        xyz="240 -243 23"
+        xyz="0.240 -0.243 0.023"
         rpy="0 0 0"
         axis="0 1 0"
     />
@@ -162,8 +166,8 @@
         name="base_link_to_left_wheel_4"
         parent="engine_4_link"
         child="left_wheel_2_link"
-        xyz="-240 243 23"
-        rpy="0 0 0"
+        xyz="-0.240 0.243 0.023"
+        rpy="0 0 3.14159"
         axis="0 1 0"
     />
 
