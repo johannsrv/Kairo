@@ -3,10 +3,23 @@
 <package format="3">
   <name>my_robot_description</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Description of the Kairo robot for simulation in Gazebo</description>
   <maintainer email="johann.rodriguezv@gmail.com">johann</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
+  <!-- Compilation and execution dependencies -->
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>gazebo_ros2_control</depend>
+  <depend>rviz2</depend>
+
+  <!-- Test dependencies (optional but useful) -->
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
