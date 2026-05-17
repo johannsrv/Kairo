@@ -59,6 +59,71 @@
         name_folder="electronics"
     />
 
+    <!-- Electronics -->
+    <xacro:create_link
+        name="pantalla_10"
+        name_link="pantalla_link"
+        name_color="${name_color_screen}"
+        rgba="${rgba_screen}"
+        xyz="-0.298 0 1.088"
+        rpy="0 1.5708 1.5708"
+        name_folder="electronics"
+    />
+    <xacro:create_link
+        name="altavoz_3_w"
+        name_link="altavoz_3_link"
+        name_color="${name_color_altavoz}"
+        rgba="${rgba_altavoz}"
+        xyz="-0.205 0.265 1.26"
+        rpy="0 0 3.14159"
+        name_folder="electronics"
+    />
+    <xacro:create_link
+        name="altavoz_3_w"
+        name_link="altavoz_3_2_link"
+        name_color="${name_color_altavoz}"
+        rgba="${rgba_altavoz}"
+        xyz="-0.205 -0.265 1.26"
+        rpy="0 0 0"
+        name_folder="electronics"
+    />
+    <xacro:create_link
+        name="elp_1080p_modulo"
+        name_link="elp_1080p_link"
+        name_color="${name_color_electronics}"
+        rgba="${rgba_electronics}"
+        xyz="-0.285 0 1.235"
+        rpy="0 0 1.5708"
+        name_folder="electronics"
+    />
+    <xacro:create_link
+        name="matriz_de_microfono_resaker_12v"
+        name_link="matriz_de_microfono_resaker_12v_link"
+        name_color="${name_color_electronics}"
+        rgba="${rgba_electronics}"
+        xyz="-0.21 0.202 1.212"
+        rpy="1.5708 0 0"
+        name_folder="electronics"
+    />
+    <xacro:create_link
+        name="matriz_de_microfono_resaker_12v"
+        name_link="matriz_de_microfono_resaker_12v_1_link"
+        name_color="${name_color_electronics}"
+        rgba="${rgba_electronics}"
+        xyz="-0.21 -0.202 1.212"
+        rpy="1.5708 0 0"
+        name_folder="electronics"
+    />
+    <xacro:create_link
+        name="sensor_lidar"
+        name_link="sensor_lidar_link"
+        name_color="${name_color_lidar}"
+        rgba="${rgba_lidar}"
+        xyz="-0.18 0 1.24"
+        rpy="1.5708 0 0"
+        name_folder="electronics"
+    />
+
     <!-- Wheels -->
     <xacro:create_link_wheel
         name="right_wheel"
@@ -98,10 +163,106 @@
         xyz_collition="0 0.05 0"
     />
 
+    <!-- Body -->
+    <xacro:create_link
+        name="base_cap"
+        name_link="base_cap_link"
+        name_color="${name_color_base}"
+        rgba="${rgba_base}"
+        xyz="0.295 0 0.105"
+        rpy="0 3.14159 1.5708"
+        name_folder="robot_body"
+    />
+
+    <xacro:create_link
+        name="body"
+        name_link="body_link"
+        name_color="${name_color_base}"
+        rgba="${rgba_base}"
+        xyz="-0.211 0 0.2105"
+        rpy="1.5708 0 -1.5708"
+        name_folder="robot_body"
+    />
+
+    <xacro:create_link
+        name="body_cover_4"
+        name_link="body_cover_4_link"
+        name_color="${name_color_base}"
+        rgba="${rgba_base}"
+        xyz="-0.13 0 0.309"
+        rpy="0 3.14159 -1.5708"
+        name_folder="robot_body"
+    />
+
+    <xacro:create_link
+        name="body_cover_3"
+        name_link="body_cover_3_link"
+        name_color="${name_color_base}"
+        rgba="${rgba_base}"
+        xyz="-0.13 0 0.54"
+        rpy="-1.5708 -1.5708 0"
+        name_folder="robot_body"
+    />
+    <xacro:create_link
+        name="body_cover_2"
+        name_link="body_cover_2_link"
+        name_color="${name_color_base}"
+        rgba="${rgba_base}"
+        xyz="-0.13 0 1.1"
+        rpy="-1.5708 -1.5708 0"
+        name_folder="robot_body"
+    />
+    <xacro:create_link
+        name="body_cover_1"
+        name_link="body_cover_1_link"
+        name_color="${name_color_base}"
+        rgba="${rgba_base}"
+        xyz="-0.13 0 1.258"
+        rpy="0 0 -1.5708"
+        name_folder="robot_body"
+    />
 
     <!-- Joints -->
 
     <!-- Base to Engine Joints -->
+    <xacro:create_joint_fixed
+        name="base_link_to_base_cap"
+        parent="base_link"
+        child="base_cap_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_body_cover_4"
+        parent="base_link"
+        child="body_cover_4_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_body_cover_3"
+        parent="base_link"
+        child="body_cover_3_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_body_cover_2"
+        parent="base_link"
+        child="body_cover_2_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_body_cover_1"
+        parent="base_link"
+        child="body_cover_1_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+
+
+    <!-- Joints electronics -->
     <xacro:create_joint_fixed
         name="base_link_to_engine_1"
         parent="base_link"
@@ -109,7 +270,6 @@
         xyz="0 0 0"
         rpy="0 0 0"
     />
-
     <xacro:create_joint_fixed
         name="base_link_to_engine_2"
         parent="base_link"
@@ -117,7 +277,6 @@
         xyz="0 0 0"
         rpy="0 0 0"
     />
-
     <xacro:create_joint_fixed
         name="base_link_to_engine_3"
         parent="base_link"
@@ -125,7 +284,6 @@
         xyz="0 0 0"
         rpy="0 0 0"
     />
-    
     <xacro:create_joint_fixed
         name="base_link_to_engine_4"
         parent="base_link"
@@ -133,10 +291,59 @@
         xyz="0 0 0"
         rpy="0 0 0"
     />
+    <xacro:create_joint_fixed
+        name="base_link_to_altavoz_3"
+        parent="base_link"
+        child="altavoz_3_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_altavoz_3_2"
+        parent="base_link"
+        child="altavoz_3_2_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_elp_1080p"
+        parent="base_link"
+        child="elp_1080p_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_matriz_de_microfono_resaker_12v"
+        parent="base_link"
+        child="matriz_de_microfono_resaker_12v_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_matriz_de_microfono_resaker_12v_1"
+        parent="base_link"
+        child="matriz_de_microfono_resaker_12v_1_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_pantalla"
+        parent="base_link"
+        child="pantalla_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
+    <xacro:create_joint_fixed
+        name="base_link_to_sensor_lidar"
+        parent="base_link"
+        child="sensor_lidar_link"
+        xyz="0 0 0"
+        rpy="0 0 0"
+    />
 
     <!-- Base to Wheel Joints -->
     <xacro:create_joint_continuous
-        name="base_link_to_right_wheel_1"
+        name="base_link_to_right_wheel_2"
         parent="engine_2_link"
         child="right_wheel_1_link"
         xyz="-0.240 -0.263 0.023"
@@ -145,7 +352,7 @@
     />
 
     <xacro:create_joint_continuous
-        name="base_link_to_right_wheel_2"
+        name="base_link_to_right_wheel_3"
         parent="engine_3_link"
         child="right_wheel_2_link"
         xyz="0.240 0.263 0.023"
@@ -154,7 +361,7 @@
     />
 
     <xacro:create_joint_continuous
-        name="base_link_to_left_wheel_3"
+        name="base_link_to_left_wheel_1"
         parent="engine_1_link"
         child="left_wheel_1_link"
         xyz="0.240 -0.243 0.023"
