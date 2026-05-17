@@ -4,10 +4,13 @@
     <ros2_control name="GazeboSystem" type="system">
 
         <hardware>
-            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </hardware>
 
-        <!-- RIGHT WHEEL FRONT -->
+        <!-- ============================================== -->
+        <!-- RIGHT FRONT WHEEL -->
+        <!-- ============================================== -->
+
         <joint name="base_link_to_right_wheel_2">
 
             <command_interface name="velocity">
@@ -20,7 +23,10 @@
 
         </joint>
 
-        <!-- RIGHT WHEEL REAR -->
+        <!-- ============================================== -->
+        <!-- RIGHT REAR WHEEL -->
+        <!-- ============================================== -->
+
         <joint name="base_link_to_right_wheel_3">
 
             <command_interface name="velocity">
@@ -33,7 +39,10 @@
 
         </joint>
 
-        <!-- LEFT WHEEL FRONT -->
+        <!-- ============================================== -->
+        <!-- LEFT FRONT WHEEL -->
+        <!-- ============================================== -->
+
         <joint name="base_link_to_left_wheel_1">
 
             <command_interface name="velocity">
@@ -46,7 +55,10 @@
 
         </joint>
 
-        <!-- LEFT WHEEL REAR -->
+        <!-- ============================================== -->
+        <!-- LEFT REAR WHEEL -->
+        <!-- ============================================== -->
+
         <joint name="base_link_to_left_wheel_4">
 
             <command_interface name="velocity">
