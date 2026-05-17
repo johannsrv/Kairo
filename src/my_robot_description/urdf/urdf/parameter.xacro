@@ -7,4 +7,12 @@
     <xacro:property name="rgba_engine" value="1 0 0 1"/>
     <xacro:property name="name_color_wheel" value="yellow"/>
     <xacro:property name="rgba_wheel" value="1 1 0 1"/>
+    <xacro:property name="name_color_screen" value="black"/>
+    <xacro:property name="rgba_screen" value="0 0 0 1"/>
+    <xacro:property name="name_color_altavoz" value="gray"/>
+    <xacro:property name="rgba_altavoz" value="0.5 0.5 0.5 1"/>
+    <xacro:property name="name_color_electronics" value="black"/>
+    <xacro:property name="rgba_electronics" value="0 0 0 1"/>
+    <xacro:property name="name_color_lidar" value="Pinkish_red"/>
+    <xacro:property name="rgba_lidar" value="1 0.4 0.4 1"/>
 </robot>
