@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+    
+    <!-- Color properties -->
     <xacro:property name="name_color_base" value="blue"/>
     <xacro:property name="rgba_base" value="0 0 1 1"/>
     <xacro:property name="name_color_engine" value="red"/>
@@ -16,4 +17,24 @@
     <xacro:property name="rgba_electronics" value="0 0 0 1"/>
     <xacro:property name="name_color_lidar" value="Pinkish_red"/>
     <xacro:property name="rgba_lidar" value="1 0.4 0.4 1"/>
+
+    <!-- mass properties -->
+    <xacro:property name="mass_base" value="0.5"/>
+    <xacro:property name="mass_base_cap" value="0.2"/>
+    <xacro:property name="mass_body_cover_1" value="0.05"/>
+    <xacro:property name="mass_body_cover_2" value="0.04"/>
+    <xacro:property name="mass_body_cover_3" value="0.08"/>
+    <xacro:property name="mass_body_cover_4" value="0.08"/>
+    <xacro:property name="mass_body" value="1.5"/>
+
+    <xacro:property name="mass_12V_DC_motor" value="0.1"/>
+    <xacro:property name="mass_altavoz_3" value="0.005"/>
+    <xacro:property name="mass_elp_1080p_modulo" value="0.005"/>
+    <xacro:property name="mass_matriz_de_microfono_resaker_12v" value="0.005"/>
+    <xacro:property name="mass_pantalla_10" value="0.01"/>
+    <xacro:property name="mass_lidar_rplidar" value="0.2"/>
+
+
+
+
 </robot>

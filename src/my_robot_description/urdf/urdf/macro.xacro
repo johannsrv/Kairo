@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
-    <xacro:macro name="create_link" params="name name_link name_folder name_color rgba xyz rpy stl_path">
+    <xacro:macro name="create_link" params="name name_link name_folder name_color rgba xyz rpy stl_path mass">
         <link name="${name_link}">
             <visual>
                 <origin xyz="${xyz}" rpy="${rpy}"/>
@@ -19,7 +19,7 @@
                 </geometry>
             </collision>
             <inertial>
-                <mass value="0.05"/>
+                <mass value="${mass}"/>
                 <origin xyz="${xyz}" rpy="${rpy}"/>
                 <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>
@@ -44,7 +44,7 @@
                 </geometry>
             </collision>
             <inertial>
-                <mass value="0.5"/>
+                <mass value="0.045267"/>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>

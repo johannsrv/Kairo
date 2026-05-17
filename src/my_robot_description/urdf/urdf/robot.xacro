@@ -31,6 +31,7 @@
         rpy="1.5708 0 0"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_base}"
     />
 
     <!-- Engine -->
@@ -43,6 +44,7 @@
         rpy="0 0 3.14159"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_12V_DC_motor}"
     />
     <xacro:create_link
         name="12V_DC_motor"
@@ -53,6 +55,7 @@
         rpy="0 0 3.14159"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_12V_DC_motor}"
     />
     <xacro:create_link
         name="12V_DC_motor"
@@ -63,6 +66,7 @@
         rpy="0 0 0"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_12V_DC_motor}"
     />
     <xacro:create_link
         name="12V_DC_motor"
@@ -73,6 +77,7 @@
         rpy="0 0 0"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_12V_DC_motor}"
     />
 
     <!-- Electronics -->
@@ -85,6 +90,7 @@
         rpy="0 1.5708 1.5708"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_pantalla_10}"
     />
     <xacro:create_link
         name="altavoz_3_w"
@@ -95,6 +101,7 @@
         rpy="0 0 3.14159"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_altavoz_3}"
     />
     <xacro:create_link
         name="altavoz_3_w"
@@ -105,6 +112,7 @@
         rpy="0 0 0"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_altavoz_3}"
     />
     <xacro:create_link
         name="elp_1080p_modulo"
@@ -115,6 +123,7 @@
         rpy="0 0 1.5708"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_elp_1080p_modulo}"
     />
     <xacro:create_link
         name="matriz_de_microfono_resaker_12v"
@@ -125,6 +134,7 @@
         rpy="1.5708 0 0"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_matriz_de_microfono_resaker_12v}"
     />
     <xacro:create_link
         name="matriz_de_microfono_resaker_12v"
@@ -135,6 +145,7 @@
         rpy="1.5708 0 0"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_matriz_de_microfono_resaker_12v}"
     />
     <xacro:create_link
         name="sensor_lidar"
@@ -145,6 +156,7 @@
         rpy="1.5708 0 0"
         name_folder="electronics"
         stl_path="$(arg stl_path)"
+        mass="${mass_lidar_rplidar}"
     />
 
     <!-- Wheels -->
@@ -199,6 +211,7 @@
         rpy="1.5708 0 -1.5708"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_body}"
     />
     <xacro:create_link
         name="base_cap"
@@ -209,6 +222,7 @@
         rpy="0 3.14159 1.5708"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_base_cap}"
     />
     <xacro:create_link
         name="body_cover_4"
@@ -219,6 +233,7 @@
         rpy="0 3.14159 -1.5708"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_body_cover_4}"
     />
     <xacro:create_link
         name="body_cover_3"
@@ -229,6 +244,7 @@
         rpy="-1.5708 -1.5708 0"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_body_cover_3}"
     />
     <xacro:create_link
         name="body_cover_2"
@@ -239,6 +255,7 @@
         rpy="-1.5708 -1.5708 0"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_body_cover_2}"
     />
     <xacro:create_link
         name="body_cover_1"
@@ -249,6 +266,7 @@
         rpy="0 0 -1.5708"
         name_folder="robot_body"
         stl_path="$(arg stl_path)"
+        mass="${mass_body_cover_1}"
     />
 
     <!-- Joints fijos -->
