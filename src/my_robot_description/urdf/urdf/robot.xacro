@@ -175,16 +175,6 @@
     />
 
     <xacro:create_link
-        name="body"
-        name_link="body_link"
-        name_color="${name_color_base}"
-        rgba="${rgba_base}"
-        xyz="-0.211 0 0.2105"
-        rpy="1.5708 0 -1.5708"
-        name_folder="robot_body"
-    />
-
-    <xacro:create_link
         name="body_cover_4"
         name_link="body_cover_4_link"
         name_color="${name_color_base}"
