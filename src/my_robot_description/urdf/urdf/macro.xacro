@@ -40,7 +40,7 @@
 
     <xacro:macro
         name="create_link_wheel"
-        params="name name_link name_folder name_color rgba xyz_collition"
+        params="name name_link name_folder name_color rgba xyz_collition rpy"
         >
 
             <link name="${name_link}">
@@ -64,7 +64,7 @@
                 <!-- COLLISION -->
                 <collision>
 
-                    <origin xyz="${xyz_collition}" rpy="1.5708 0 0"/>
+                    <origin xyz="${xyz_collition}" rpy="${rpy}"/>
 
                     <geometry>
                         <cylinder length="0.045674" radius="0.028885"/>
@@ -105,7 +105,7 @@
 
     <xacro:macro
         name="create_joint_continuous"
-        params="name parent child xyz rpy axis limit_lower limit_upper">
+        params="name parent child xyz rpy axis">
         <joint name="${name}" type="continuous">
             <parent link="${parent}"/>
             <child link="${child}"/>
