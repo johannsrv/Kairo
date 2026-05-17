@@ -1,0 +1,55 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
+    update_rate: 100  # Hz
+
+    # Display the status of all components (wheels, etc.)
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # Differential controller for motion using cmd_vel
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    # Publish IMU data (if you're using it in Gazebo)
+    imu_broadcaster:
+      type: imu_sensor_broadcaster/IMUSensorBroadcaster
+
+# Differential Controller Settings
+diff_drive_controller:
+  ros__parameters:
+    # Left wheels (exact names of your joints in ros2_control.xacro)
+    left_wheel_names: ["base_link_to_left_wheel_1", "base_link_to_left_wheel_4"]
+    # Right wheels
+    right_wheel_names: ["base_link_to_right_wheel_2", "base_link_to_right_wheel_3"]
+
+    # Kinematic parameters (ADJUST ACCORDING TO YOUR ROBOT)
+    wheel_radius: 0.1        # meters (change according to the STL)
+    wheel_separation: 0.5    # meters (distance between left and right wheels)
+
+    # Command interface (velocity, as defined in ros2_control)
+    left_wheel_command_interface: velocity
+    right_wheel_command_interface: velocity
+
+    # State interface (position and velocity)
+    left_wheel_state_interface: velocity
+    right_wheel_state_interface: velocity
+
+    # Odometry (published automatically on /odom)
+    publish_odom: true
+    publish_odom_tf: true
+    odom_frame_id: odom
+    base_frame_id: base_link
+
+    # Speed limits
+    linear_velocity_max: 1.0   # m/s
+    angular_velocity_max: 2.0  # rad/s
+
+    # Input command (typical in ROS)
+    cmd_vel_topic: /cmd_vel
+
+# IMU Configuration (optional, if your gazebo.xacro has an IMU sensor)
+imu_broadcaster:
+  ros__parameters:
+    sensor_name: imu_sensor
+    frame_id: base_link
