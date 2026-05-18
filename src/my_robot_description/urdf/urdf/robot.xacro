@@ -5,10 +5,6 @@
     <!-- ===================================================== -->
 
     <xacro:arg
-        name="stl_path"
-        default="$(find my_robot_description)/urdf/stl"/>
-
-    <xacro:arg
         name="controllers_file"
         default="$(find my_robot_description)/config/controllers.yaml"/>
 
@@ -30,7 +26,6 @@
         xyz="0 0 0"
         rpy="1.5708 0 0"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_base}"
     />
 
@@ -43,7 +38,6 @@
         xyz="0.240 -0.091 0.023"
         rpy="0 0 3.14159"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_12V_DC_motor}"
     />
     <xacro:create_link
@@ -54,7 +48,6 @@
         xyz="-0.240 -0.091 0.023"
         rpy="0 0 3.14159"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_12V_DC_motor}"
     />
     <xacro:create_link
@@ -65,7 +58,6 @@
         xyz="0.240 0.091 0.023"
         rpy="0 0 0"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_12V_DC_motor}"
     />
     <xacro:create_link
@@ -76,7 +68,6 @@
         xyz="-0.240 0.091 0.023"
         rpy="0 0 0"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_12V_DC_motor}"
     />
 
@@ -89,7 +80,6 @@
         xyz="-0.298 0 1.088"
         rpy="0 1.5708 1.5708"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_pantalla_10}"
     />
     <xacro:create_link
@@ -100,7 +90,6 @@
         xyz="-0.205 0.265 1.26"
         rpy="0 0 3.14159"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_altavoz_3}"
     />
     <xacro:create_link
@@ -111,7 +100,6 @@
         xyz="-0.205 -0.265 1.26"
         rpy="0 0 0"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_altavoz_3}"
     />
     <xacro:create_link
@@ -122,7 +110,6 @@
         xyz="-0.285 0 1.235"
         rpy="0 0 1.5708"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_elp_1080p_modulo}"
     />
     <xacro:create_link
@@ -133,7 +120,6 @@
         xyz="-0.21 0.202 1.212"
         rpy="1.5708 0 0"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_matriz_de_microfono_resaker_12v}"
     />
     <xacro:create_link
@@ -144,7 +130,6 @@
         xyz="-0.21 -0.202 1.212"
         rpy="1.5708 0 0"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_matriz_de_microfono_resaker_12v}"
     />
     <xacro:create_link
@@ -155,7 +140,6 @@
         xyz="-0.18 0 1.24"
         rpy="1.5708 0 0"
         name_folder="electronics"
-        stl_path="$(arg stl_path)"
         mass="${mass_lidar_rplidar}"
     />
 
@@ -165,40 +149,32 @@
         name_link="right_wheel_1_link"
         name_color="${name_color_wheel}"
         rgba="${rgba_wheel}"
-        rpy="0 0 0"
         name_folder="robot_body"
         xyz_collition="0 0.065 0"
-        stl_path="$(arg stl_path)"
     />
     <xacro:create_link_wheel
         name="right_wheel"
         name_link="right_wheel_2_link"
         name_color="${name_color_wheel}"
         rgba="${rgba_wheel}"
-        rpy="0 0 3.14159"
         name_folder="robot_body"
         xyz_collition="0 0.07 0"
-        stl_path="$(arg stl_path)"
     />
     <xacro:create_link_wheel
         name="left_wheel"
         name_link="left_wheel_1_link"
         name_color="${name_color_wheel}"
         rgba="${rgba_wheel}"
-        rpy="0 0 0"
         name_folder="robot_body"
         xyz_collition="0 0.05 0"
-        stl_path="$(arg stl_path)"
     />
     <xacro:create_link_wheel
         name="left_wheel"
         name_link="left_wheel_2_link"
         name_color="${name_color_wheel}"
         rgba="${rgba_wheel}"
-        rpy="0 0 3.14159"
         name_folder="robot_body"
         xyz_collition="0 0.05 0"
-        stl_path="$(arg stl_path)"
     />
 
     <!-- Body covers -->
@@ -210,7 +186,6 @@
         xyz="-0.211 0 0.2105"
         rpy="1.5708 0 -1.5708"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_body}"
     />
     <xacro:create_link
@@ -221,7 +196,6 @@
         xyz="0.295 0 0.105"
         rpy="0 3.14159 1.5708"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_base_cap}"
     />
     <xacro:create_link
@@ -232,7 +206,6 @@
         xyz="-0.13 0 0.309"
         rpy="0 3.14159 -1.5708"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_body_cover_4}"
     />
     <xacro:create_link
@@ -243,7 +216,6 @@
         xyz="-0.13 0 0.54"
         rpy="-1.5708 -1.5708 0"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_body_cover_3}"
     />
     <xacro:create_link
@@ -254,7 +226,6 @@
         xyz="-0.13 0 1.1"
         rpy="-1.5708 -1.5708 0"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_body_cover_2}"
     />
     <xacro:create_link
@@ -265,7 +236,6 @@
         xyz="-0.13 0 1.258"
         rpy="0 0 -1.5708"
         name_folder="robot_body"
-        stl_path="$(arg stl_path)"
         mass="${mass_body_cover_1}"
     />
 
@@ -393,7 +363,7 @@
     <!-- Joints continuos (ruedas) -->
     <xacro:create_joint_continuous 
     name="base_link_to_right_wheel_2"
-    parent="engine_2_link"
+    parent="base_link"
     child="right_wheel_1_link"
     xyz="-0.240 -0.263 0.023"
     rpy="0 0 0"
@@ -401,7 +371,7 @@
     />
     <xacro:create_joint_continuous
     name="base_link_to_right_wheel_3"
-    parent="engine_3_link"
+    parent="base_link"
     child="right_wheel_2_link"
     xyz="0.240 0.263 0.023"
     rpy="0 0 3.14159"
@@ -409,7 +379,7 @@
     />
     <xacro:create_joint_continuous
     name="base_link_to_left_wheel_1"
-    parent="engine_1_link"
+    parent="base_link"
     child="left_wheel_1_link"
     xyz="0.240 -0.243 0.023"
     rpy="0 0 0"
@@ -417,7 +387,7 @@
     />
     <xacro:create_joint_continuous
     name="base_link_to_left_wheel_4"
-    parent="engine_4_link"
+    parent="base_link"
     child="left_wheel_2_link"
     xyz="-0.240 0.243 0.023"
     rpy="0 0 3.14159"
