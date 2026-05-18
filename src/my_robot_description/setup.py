@@ -21,6 +21,7 @@ setup(
         # STL files (opcional, si quieres tenerlos en install)
         (os.path.join('share', package_name, 'urdf', 'stl', 'electronics'), glob('urdf/stl/electronics/*.stl')),
         (os.path.join('share', package_name, 'urdf', 'stl', 'robot_body'), glob('urdf/stl/robot_body/*.stl')),
+        (os.path.join('share', package_name, 'world'),glob('world/*.sdf')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

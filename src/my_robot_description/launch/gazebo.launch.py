@@ -12,6 +12,12 @@ from launch_ros.actions import Node
 def generate_launch_description():
     pkg_share = get_package_share_directory('my_robot_description')
 
+    world_file = os.path.join(
+        pkg_share,
+        'world',
+        'world_restauran.sdf'
+    )
+
     xacro_file = os.path.join(pkg_share, 'urdf', 'urdf', 'robot.xacro')
     controllers_src = os.path.join(pkg_share, 'config', 'controllers.yaml')
 
@@ -38,7 +44,10 @@ def generate_launch_description():
 
     ign_resource_path = SetEnvironmentVariable(
         name='IGN_GAZEBO_RESOURCE_PATH',
-        value=share_dir
+        value=':'.join([
+            pkg_share,
+            os.path.join(pkg_share, 'models')
+        ])
     )
 
     robot_state_publisher = Node(
@@ -52,7 +61,7 @@ def generate_launch_description():
     )
 
     gazebo = ExecuteProcess(
-        cmd=['gz', 'sim', 'empty.sdf', '-r'],
+        cmd=['gz', 'sim', world_file, '-r'],
         output='screen'
     )
 
@@ -62,7 +71,7 @@ def generate_launch_description():
         arguments=[
             '-name', 'kairo',
             '-topic', 'robot_description',
-            '-x', '0.0',
+            '-x', '-3.5',
             '-y', '0.0',
             '-z', '0.5'
         ],
