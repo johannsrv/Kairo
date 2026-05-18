@@ -14,7 +14,6 @@ def generate_launch_description():
 
     xacro_file = os.path.join(pkg_share, 'urdf', 'urdf', 'robot.xacro')
     controllers_src = os.path.join(pkg_share, 'config', 'controllers.yaml')
-    stl_abs_path = os.path.join(pkg_share, 'urdf', 'stl')
 
     # Temporary path without “robot_description” in the path
     controllers_yaml = '/tmp/kairo_controllers.yaml'
@@ -28,13 +27,18 @@ def generate_launch_description():
         'controllers_file:=',
         controllers_yaml,
         ' ',
-        'stl_path:=',
-        stl_abs_path,
     ])
 
-    set_plugin_path = SetEnvironmentVariable(
-        name='GZ_SIM_SYSTEM_PLUGIN_PATH',
-        value='/opt/ros/jazzy/lib'
+    share_dir = os.path.dirname(pkg_share)
+
+    gz_resource_path = SetEnvironmentVariable(
+        name='GZ_SIM_RESOURCE_PATH',
+        value=share_dir
+    )
+
+    ign_resource_path = SetEnvironmentVariable(
+        name='IGN_GAZEBO_RESOURCE_PATH',
+        value=share_dir
     )
 
     robot_state_publisher = Node(
@@ -92,12 +96,23 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}]
     )
 
+    clock_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'
+        ],
+        output='screen'
+    )
+
     return LaunchDescription([
-        set_plugin_path,
+        gz_resource_path,
+        ign_resource_path,
         robot_state_publisher,
         gazebo,
         spawn_entity,
         TimerAction(period=5.0, actions=[joint_state_broadcaster_spawner]),
         TimerAction(period=7.0, actions=[diff_drive_controller_spawner]),
         rviz2,
+        clock_bridge,
     ])
