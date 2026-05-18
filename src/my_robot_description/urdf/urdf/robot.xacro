@@ -375,7 +375,7 @@
     child="right_wheel_2_link"
     xyz="0.240 0.263 0.023"
     rpy="0 0 3.14159"
-    axis="0 1 0"
+    axis="0 -1 0"
     />
     <xacro:create_joint_continuous
     name="base_link_to_left_wheel_1"
@@ -391,7 +391,7 @@
     child="left_wheel_2_link"
     xyz="-0.240 0.243 0.023"
     rpy="0 0 3.14159"
-    axis="0 1 0"
+    axis="0 -1 0"
     />
 
 </robot>

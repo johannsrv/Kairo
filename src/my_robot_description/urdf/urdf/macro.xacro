@@ -41,7 +41,7 @@
                 <origin xyz="${xyz_collition}" rpy="1.5708 0 0"/>
                 <geometry>
                     <cylinder length="0.045674"
-                            radius="0.028885"/>
+                            radius="0.035"/>
                 </geometry>
             </collision>
             <inertial>
