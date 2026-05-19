@@ -11,6 +11,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('my_robot_description')
+    models_path = os.path.join(pkg_share, 'models')
 
     world_file = os.path.join(
         pkg_share,
@@ -37,17 +38,19 @@ def generate_launch_description():
 
     share_dir = os.path.dirname(pkg_share)
 
+    resource_paths = ':'.join([
+        models_path,
+        share_dir
+    ])
+
     gz_resource_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
-        value=share_dir
+        value=resource_paths
     )
 
     ign_resource_path = SetEnvironmentVariable(
         name='IGN_GAZEBO_RESOURCE_PATH',
-        value=':'.join([
-            pkg_share,
-            os.path.join(pkg_share, 'models')
-        ])
+        value=resource_paths
     )
 
     robot_state_publisher = Node(
