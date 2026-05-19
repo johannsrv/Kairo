@@ -67,142 +67,142 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/veer/models/indoor lightmap/1</uri>
+      <uri>model://indoor_lightmap</uri>
       <name>indoor_lightmap</name>
       <pose>0 2 0.69999999999999996 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining table/1</uri>
+      <uri>model://dining_table</uri>
       <name>DiningTable</name>
       <pose>4 3.5 0 0 0 1.5708</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair</name>
       <pose>4.5 4 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_0</name>
       <pose>3.5 4 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining table/1</uri>
+      <uri>model://dining_table</uri>
       <name>DiningTable_0</name>
       <pose>4 0.5 0 0 0 1.5708</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_1</name>
       <pose>4.5 3 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_2</name>
       <pose>3.5 3 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_3</name>
       <pose>4.5 1 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_4</name>
       <pose>3.5 1 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_5</name>
       <pose>4.5 0 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_6</name>
       <pose>3.5 0 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/woodenchair/1</uri>
+      <uri>model://woodenchair</uri>
       <name>WoodenChair</name>
       <pose>3.2000000000000002 -4.2999999999999998 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/woodenchair/1</uri>
+      <uri>model://woodenchair</uri>
       <name>WoodenChair_0</name>
       <pose>3.2000000000000002 -3 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining table/1</uri>
+      <uri>model://dining_table</uri>
       <name>DiningTable_1</name>
       <pose>0 4 0 0 0 1.5708</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_7</name>
       <pose>0.5 3.5 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_8</name>
       <pose>-0.5 3.5 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining table/1</uri>
+      <uri>model://dining_table</uri>
       <name>DiningTable_2</name>
       <pose>0 1 0 0 0 1.5708</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_9</name>
       <pose>-0.5 1.5 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_10</name>
       <pose>0.5 1.5 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_11</name>
       <pose>0.5 0.5 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_12</name>
       <pose>-0.5 0.5 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/woodenchair/1</uri>
+      <uri>model://woodenchair</uri>
       <name>WoodenChair_1</name>
       <pose>0.20000000000000001 -4 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/woodenchair/1</uri>
+      <uri>model://woodenchair</uri>
       <name>WoodenChair_2</name>
       <pose>0.20000000000000001 -3 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/woodenchair/1</uri>
+      <uri>model://woodenchair</uri>
       <name>WoodenChair_3</name>
       <pose>-2.5 -4 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/woodenchair/1</uri>
+      <uri>model://woodenchair</uri>
       <name>WoodenChair_4</name>
       <pose>-2.5 -3 0 0 0 3.1415899999999999</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining table/1</uri>
+      <uri>model://dining_table</uri>
       <name>DiningTable_3</name>
       <pose>-3.6000000000000001 3.2999999999999998 0 0 0 0</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_13</name>
       <pose>-3 3.7000000000000002 0 0 0 -1.5708</pose>
     </include>
     <include>
-      <uri>file:///home/johann/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <uri>model://dining_chair</uri>
       <name>DiningChair_14</name>
       <pose>-3 2.7999999999999998 0 0 0 -1.5708</pose>
     </include>
