@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  kairo:
+    container_name: kairo_robot
+    image: kairo:latest
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    privileged: true
+    network_mode: host
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_DOMAIN_ID=0
+      # - KAIRO_LLM_ENDPOINT=http://localhost:8000
+      # - KAIRO_VISION_ENDPOINT=http://localhost:8001
+      # - KAIRO_MAP_ENDPOINT=http://localhost:8002
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ../src:/root/ros2_ws/src
+      - ../:/ros2_ws
+
+    stdin_open: true
+    tty: true
+
+    # command: bash
+    command: ["ros2", "launch", "my_robot_description", "gazebo.launch.py"]
