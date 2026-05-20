@@ -1,0 +1,26 @@
+services:
+
+  kairo_sim:
+
+    build:
+      context: ./kairo_sim
+      dockerfile: Dockerfile
+
+    container_name: kairo_sim
+
+    network_mode: host
+
+    privileged: true
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_DOMAIN_ID=0
+      - QT_X11_NO_MITSHM=1
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+    stdin_open: true
+    tty: true
+
+    command: ros2 launch my_robot_description gazebo.launch.py
