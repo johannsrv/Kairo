@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-rviz2 \
     ros-${ROS_DISTRO}-ros-gz-sim \
     ros-${ROS_DISTRO}-ros-gz-bridge \
+    ros-${ROS_DISTRO}-gz-ros2-control \
     ros-${ROS_DISTRO}-xacro \
     ros-${ROS_DISTRO}-joint-state-publisher-gui \
     ros-${ROS_DISTRO}-robot-state-publisher \
@@ -55,6 +56,9 @@ RUN mkdir -p /root/ros2_ws/src
 WORKDIR /root/ros2_ws
 
 COPY ./src /root/ros2_ws/src
+
+
+
 
 # =========================
 # 🔧 Dependencies

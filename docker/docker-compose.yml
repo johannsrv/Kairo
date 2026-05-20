@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   kairo:
     container_name: kairo_robot

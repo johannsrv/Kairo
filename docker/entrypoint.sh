@@ -29,6 +29,11 @@ export ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
 export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/root/ros2_ws/src/my_robot_description/models
 
 # =========================
+# Gazebo plugins
+# =========================
+export GZ_SIM_SYSTEM_PLUGIN_PATH=$GZ_SIM_SYSTEM_PLUGIN_PATH:/opt/ros/$ROS_DISTRO/lib
+
+# =========================
 # API endpoints (future LLM / CV / planning)
 # =========================
 # export KAIRO_LLM_ENDPOINT=${KAIRO_LLM_ENDPOINT}
