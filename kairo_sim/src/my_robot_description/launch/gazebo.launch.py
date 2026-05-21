@@ -4,10 +4,10 @@ import shutil
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, SetEnvironmentVariable, TimerAction
+from launch.actions import ExecuteProcess, SetEnvironmentVariable, TimerAction, RegisterEventHandler
 from launch.substitutions import Command, FindExecutable
 from launch_ros.actions import Node
-
+from launch.event_handlers import OnProcessExit
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('my_robot_description')
@@ -117,14 +117,31 @@ def generate_launch_description():
         output='screen'
     )
 
+    load_joint_state_broadcaster = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=spawn_entity,
+            on_exit=[joint_state_broadcaster_spawner],
+        )
+    )
+
+    load_diff_drive_controller = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=joint_state_broadcaster_spawner,
+            on_exit=[diff_drive_controller_spawner],
+        )
+    )
+
     return LaunchDescription([
         gz_resource_path,
         ign_resource_path,
+
         robot_state_publisher,
         gazebo,
         spawn_entity,
-        TimerAction(period=5.0, actions=[joint_state_broadcaster_spawner]),
-        TimerAction(period=7.0, actions=[diff_drive_controller_spawner]),
+
+        load_joint_state_broadcaster,
+        load_diff_drive_controller,
+
         rviz2,
         clock_bridge,
     ])
