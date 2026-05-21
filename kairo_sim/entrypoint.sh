@@ -44,6 +44,12 @@ export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/root/ros2_ws/src/my_robot_des
 export GZ_SIM_SYSTEM_PLUGIN_PATH=$GZ_SIM_SYSTEM_PLUGIN_PATH:/opt/ros/$ROS_DISTRO/lib
 
 # =========================================================
+# RMW IMPLEMENTATION
+# =========================================================
+export ROS_DOMAIN_ID=0
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+
+# =========================================================
 # DEBUG INFO
 # =========================================================
 

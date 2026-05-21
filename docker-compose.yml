@@ -16,6 +16,7 @@ services:
       - DISPLAY=${DISPLAY}
       - ROS_DOMAIN_ID=0
       - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=0
 
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
