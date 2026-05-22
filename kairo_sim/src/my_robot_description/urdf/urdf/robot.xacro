@@ -135,16 +135,79 @@
         name_folder="electronics"
         mass="${mass_matriz_de_microfono_resaker_12v}"
     />
-    <xacro:create_link
-        name="sensor_lidar"
-        name_link="sensor_lidar_link"
-        name_color="${name_color_lidar}"
-        rgba="${rgba_lidar}"
-        xyz="-0.18 0 1.24"
-        rpy="1.5708 0 0"
-        name_folder="electronics"
-        mass="${mass_lidar_rplidar}"
-    />
+    <link name="sensor_lidar_link">
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+
+            <geometry>
+                <cylinder radius="0.04" length="0.05"/>
+            </geometry>
+
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+
+            <geometry>
+                <cylinder radius="0.04" length="0.05"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1"/>
+
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+
+            <inertia
+                ixx="0.001"
+                ixy="0"
+                ixz="0"
+                iyy="0.001"
+                iyz="0"
+                izz="0.001"/>
+        </inertial>
+
+    </link>
+
+    <link name="imu_link">
+
+        <visual>
+            <geometry>
+                <box size="0.03 0.03 0.01"/>
+            </geometry>
+
+            <material name="blue">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.03 0.03 0.01"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+
+            <mass value="0.01"/>
+
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+
+            <inertia
+                ixx="0.0001"
+                ixy="0"
+                ixz="0"
+                iyy="0.0001"
+                iyz="0"
+                izz="0.0001"/>
+
+        </inertial>
+
+    </link>
 
     <!-- Wheels -->
     <xacro:create_link_wheel
@@ -401,6 +464,14 @@
     xyz="-0.240 0.243 0.023"
     rpy="0 0 3.14159"
     axis="0 -1 0"
+    />
+
+    <xacro:create_joint_fixed
+    name="base_link_to_imu"
+    parent="base_link"
+    child="imu_link"
+    xyz="0 0 0"
+    rpy="0 0 0"
     />
 
 </robot>

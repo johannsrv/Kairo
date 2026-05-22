@@ -131,6 +131,24 @@ def generate_launch_description():
         )
     )
 
+    lidar_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan'
+        ],
+        output='screen'
+    )
+
+    imu_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU'
+        ],
+        output='screen'
+    )
+
     return LaunchDescription([
         gz_resource_path,
         ign_resource_path,
@@ -144,4 +162,7 @@ def generate_launch_description():
 
         rviz2,
         clock_bridge,
+
+        lidar_bridge,
+        imu_bridge,
     ])
