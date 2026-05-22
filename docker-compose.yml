@@ -25,3 +25,29 @@ services:
     tty: true
 
     command: ros2 launch my_robot_description gazebo.launch.py
+
+  kairo_hw:
+
+    build:
+      context: ./kairo_hw
+      dockerfile: Dockerfile
+
+    container_name: kairo_hw
+
+    network_mode: host
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_DOMAIN_ID=0
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+
+    stdin_open: true
+    tty: true
+
+    volumes:
+      - ./kairo_hw/src:/workspace/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+    working_dir: /workspace
+
+    command: ros2 launch navegation navegation.launch.py
