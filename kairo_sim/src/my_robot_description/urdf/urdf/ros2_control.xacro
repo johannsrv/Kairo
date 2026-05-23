@@ -5,7 +5,13 @@
 
         <hardware>
             <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            <plugin
+                filename="gz-sim-sensors-system"
+                name="gz::sim::systems::Sensors"
+            />
         </hardware>
+
+        
 
         <!-- ============================================== -->
         <!-- RIGHT FRONT WHEEL -->
